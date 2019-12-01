@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Patient List</title>
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="node_modules/fontawesome-4.7/css/font-awesome.min.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="module" src="main.mjs"></script>
+  </head>
+  <body>
+    <section class="container">
+      <div class="jumbotron">
+        <h1>Patient List</h1>
+      </div>
+
+      <form action="#" class="form-inline">
+
+        <div class="form-group mr-4">
+          <label for="gender" class="mr-2">Gender</label>
+          <select class="form-control dropdown" name="gender" id="gender">
+            <option value="0">All</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group mr-4">
+            <label for="name" class="mr-2">Name</label>
+            <input class="form-control" type="text" placeholder="Enter Name">
+        </div>
+
+        <div class="form-group mr-4">
+            <label for="phone" class="mr-2">Phone</label>
+            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter Phone">
+        </div>
+
+        <button id="searchBtn" type="button" class="btn btn-primary mr-2">
+            <i class="fa fa-search"></i>
+            Search
+        </button>
+
+        <button id="addBtn" type="button" class="btn btn-danger">
+            <i class="fa fa-plus"></i>
+            Add New
+        </button>
+
+      </form>
+    </section>
+
+    <section class="container">
+        <table class="table mt-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+        </table>
+    </section>
+
+    <section class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+          Launch
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        Body
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </body>
+</html>
