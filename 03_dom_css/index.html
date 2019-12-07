@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Patient List</title>
 
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="node_modules/fontawesome-4.7/css/font-awesome.min.css">
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -27,8 +24,8 @@
       <form action="#" class="form-inline">
 
         <div class="form-group mr-4">
-          <label for="gender" class="mr-2">Gender</label>
-          <select class="form-control dropdown" name="gender" id="gender">
+          <label for="sch-gender" class="mr-2">Gender</label>
+          <select class="form-control dropdown" name="gender" id="sch-gender">
             <option value="0">All</option>
             <option value="1">Male</option>
             <option value="2">Female</option>
@@ -36,13 +33,13 @@
         </div>
 
         <div class="form-group mr-4">
-            <label for="name" class="mr-2">Name</label>
-            <input class="form-control" type="text" placeholder="Enter Name">
+            <label for="sch-name" class="mr-2">Name</label>
+            <input id="sch-name" class="form-control" type="text" placeholder="Enter Name">
         </div>
 
         <div class="form-group mr-4">
-            <label for="phone" class="mr-2">Phone</label>
-            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter Phone">
+            <label for="sch-phone" class="mr-2">Phone</label>
+            <input type="tel" name="phone" id="sch-phone" class="form-control" placeholder="Enter Phone">
         </div>
 
         <button id="searchBtn" type="button" class="btn btn-primary mr-2">
@@ -50,7 +47,7 @@
             Search
         </button>
 
-        <button id="addBtn" type="button" class="btn btn-danger">
+        <button id="addBtn" type="button" class="btn btn-danger" >
             <i class="fa fa-plus"></i>
             Add New
         </button>
@@ -70,46 +67,66 @@
                     <th>Address</th>
                 </tr>
             </thead>
+            <tbody id="result">
+
+            </tbody>
         </table>
     </section>
 
     <section class="container">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-          Launch
-        </button>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-              <div class="modal-body">
-                <div class="container-fluid">
-                  Add rows here
+
+      <!-- Modal -->
+      <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="edit-title">Add New Patient</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="modal-body">
+              
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter Patient Name" >
+              </div>
+
+              <div class="form-group">
+                <label for="gender">Gender</label>
+
+                <div>
+                  <input type="radio" name="gender" id="male" value="Male">
+                  <label for="male" class="mr-4">Male</label>
+                  <input type="radio" name="gender" id="female" value="Female">
+                  <label for="female">Female</label>
                 </div>
+
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input class="form-control" type="date" name="dob" id="dob" placeholder="Enter Date of Birth">
               </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter Phone Number" class="form-control">
+              </div>
+              
+              <div class="form-group">
+                <label for="address">Address</label>
+                <textarea class="form-control" name="address" id="address" cols="30" rows="4"></textarea>
+              </div>
+
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button id="saveBtn" type="button" class="btn btn-primary">Save</button>
             </div>
           </div>
         </div>
-        
-        <script>
-          $('#exampleModal').on('show.bs.modal', event => {
-            var button = $(event.relatedTarget);
-            var modal = $(this);
-            // Use above variables to manipulate the DOM
-            
-          });
-        </script>
+      </div>
     </section>
 
   </body>
