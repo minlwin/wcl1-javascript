@@ -1,4 +1,4 @@
-export class SimpleCalculator {
+class SimpleCalculator {
 
     constructor(d1, d2) {
         this.digit1 = Number.parseFloat(d1)

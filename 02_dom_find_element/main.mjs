@@ -22,8 +22,7 @@ window.onload = () => {
         btn.onclick = () => {
             if(d1.value && d2.value) {
                 let calculator = SimpleCalculatorFactory.getCalculator(d1.value, d2.value)
-                let btnText = btn.innerText
-                message.innerText = calculator[btnText.toLowerCase()]()
+                message.innerText = calculator[btn.innerText.toLowerCase()]()
             }
         }
     })
