@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JDC | Employees</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/fontawesome-4.7/css/font-awesome.min.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="employees.mjs" type="module"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">JDC</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="registrations.html">Registrations <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="classes.html">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="students.html" class="nav-link">Students</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Master Data
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="courses.html">Courses</a>
+                        <a class="dropdown-item" href="discounts.html">Discounts</a>
+                        <a href="employees.html" class="dropdown-item">Employees</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Button trigger modal -->
+    <div class="container mt-4">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#employee-edit">
+            <i class="fa fa-plus"></i> Add New
+        </button>  
+        
+        <table id="employees" class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Login Id</th>
+                    <th>Name</th>
+                    <th>School</th>
+                    <th>Role</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="employee-edit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                      <label for="loginId">Login Id</label>
+                      <input type="text" id="loginId" class="form-control" placeholder="Enter Login Id">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Name" id="name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="role">Role</label>
+                      <select class="form-control" name="role" id="role">
+                        <option>Teacher</option>
+                        <option>Developer</option>
+                        <option>Reception</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" placeholder="Enter Phone" id="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Name</label>
+                        <input type="email" class="form-control" placeholder="Enter Email" id="email">
+                    </div>
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="saveBtn" type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
